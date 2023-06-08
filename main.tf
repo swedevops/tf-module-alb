@@ -31,7 +31,6 @@ resource "aws_lb" "main" {
   subnets            = var.subnets
   tags               = merge(var.tags, { name = "${var.name}-alb-${var.env}" })
 }
-
 resource "aws_lb_listener" "main" {
   load_balancer_arn = aws_lb.main.arn
   port              = "80"
@@ -47,6 +46,8 @@ resource "aws_lb_listener" "main" {
     }
   }
 }
+
+
 
 
 
